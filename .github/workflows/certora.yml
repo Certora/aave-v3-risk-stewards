@@ -1,4 +1,4 @@
-name: certora-review-steward
+name: certora
 
 on:
   push:
@@ -41,7 +41,7 @@ jobs:
           cd certora
           touch applyHarness.patch
           make munged
-          cd ../..
+          cd ..
           certoraRun certora/confs/${{ matrix.rule }}
         env:
           CERTORAKEY: ${{ secrets.CERTORAKEY }}
